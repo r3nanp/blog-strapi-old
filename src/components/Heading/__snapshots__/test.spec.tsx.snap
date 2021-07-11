@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Heading /> should render a white heading by default 1`] = `
+.c0 {
+  color: #FAFAFA;
+  size: 1.6rem;
+}
+
+<h2
+  class="c0"
+  color="white"
+>
+  Hello world
+</h2>
+`;
