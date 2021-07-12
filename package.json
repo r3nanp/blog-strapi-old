@@ -1,20 +1,19 @@
 {
-  "name": "next-boilerplate",
+  "name": "blog-strapi",
   "version": "0.1.0",
   "private": true,
   "author": "Renan Pereira <renanmol87@gmail.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/r3nanp/next-boilerplate.git"
+    "url": "https://github.com/r3nanp/blog-strapi.git"
   },
   "keywords": [
+    "studies",
     "react",
-    "next",
-    "boilerplate",
-    "r3nanp-boilerplate"
+    "next"
   ],
   "bugs": {
-    "url": "https://github.com/r3nanp/next-boilerplate/issues"
+    "url": "https://github.com/r3nanp/blog-strapi/issues"
   },
   "engines": {
     "node": ">=12.x"
@@ -36,6 +35,7 @@
     ]
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "next": "^11.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
