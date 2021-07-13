@@ -19,10 +19,6 @@ export const GlobalStyles: GlobalStyleComponent<
     box-sizing: border-box;
   }
 
-  a {
-    text-decoration: none;
-  }
-
   input, button {
     border: none;
   }
@@ -39,24 +35,26 @@ export const GlobalStyles: GlobalStyleComponent<
     cursor: pointer;
   }
 
-  @media(max-width: 1080px) {
-    html {
-      font-size: 93.75%;
-    }
+  html {
+    font-size: 62.5%;
   }
 
-  @media(max-width: 720px) {
-    html {
-      font-size: 87.5%;
-    }
-  }
-
-  html, body {
-    ${({ theme }) => css`
-      background: ${theme.colors.primary};
+  ${({ theme }) => css`
+    html,
+    body {
+      background: ${theme.colors.white};
       font-weight: ${theme.font.normal};
       font-family: ${theme.font.family};
-      font-size: ${theme.font.sizes.xsmall};
-    `}
-  }
+      font-size: ${theme.font.sizes.small};
+    }
+    a {
+      text-decoration: none;
+      color: ${theme.colors.secondary};
+      transition: opacity ${theme.transition.default};
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  `}
 `
