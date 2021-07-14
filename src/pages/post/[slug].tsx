@@ -2,7 +2,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import { api } from 'services/api'
-import { Header } from '@components/Header'
+import { Header } from 'components/Header'
 
 import { formatDate } from 'utils/format-date'
 import type { PostData } from 'domain/posts'
@@ -23,11 +23,11 @@ export default function Post({ post }: PostProps) {
       <Header title="Blog" />
 
       <main>
-        <Image src={cover.url} width={400} height={400} />
+        <Image src={cover.url} alt={title} width={400} height={400} />
 
         <div dangerouslySetInnerHTML={{ __html: content }} />
 
-        <p>Post created at: {createdAt}</p>
+        <p>Post criado em: {createdAt}</p>
       </main>
     </>
   )
