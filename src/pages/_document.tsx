@@ -6,7 +6,6 @@ import Document, {
   Main,
   NextScript
 } from 'next/document'
-import { ReactElement } from 'react'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -37,14 +36,19 @@ export default class MyDocument extends Document {
     }
   }
 
-  render(): ReactElement {
+  render() {
     return (
       <Html lang="pt-BR">
         <Head>
           <meta charSet="utf-8" />
           <meta name="theme-color" content="#ffffff" />
           <link rel="shortcut icon" href="/favicon.png" />
-
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@600;700&family=Roboto:wght@400;500&display=swap"
+            rel="stylesheet"
+          />
           <script
             crossOrigin="anonymous"
             src="https://polyfill.io/v3/polyfill.min.js"
