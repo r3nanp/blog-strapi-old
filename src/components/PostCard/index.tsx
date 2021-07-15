@@ -16,12 +16,12 @@ export function PostCard({ cover, url, title }: PostCardProps) {
       <S.Cover>
         <Link href={url}>
           <a>
-            <Image src={cover} alt={title} layout="fill" />
+            <Image src={cover} alt={title} width={500} height={500} />
           </a>
         </Link>
       </S.Cover>
 
-      <Heading size="large" color="black">
+      <Heading color="black">
         <Link href={url}>
           <a className="title">{title}</a>
         </Link>
