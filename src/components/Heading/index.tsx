@@ -5,7 +5,7 @@ import * as S from './styles'
 export type HeadingProps = {
   children: ReactNode
   color?: 'white' | 'black'
-  size?: 'small' | 'medium' | 'large'
+  size?: 'small' | 'medium' | 'huge'
 }
 
 export function Heading({
