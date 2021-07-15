@@ -2,16 +2,19 @@ import Head from 'next/head'
 import { GetStaticProps } from 'next'
 import { api } from 'services/api'
 import { Header } from 'components/Header'
+import { Footer } from 'components/Footer'
+import { Heading } from 'components/Heading'
 import { PostCard } from 'components/PostCard'
 
 import type { PostData } from 'domain/posts'
 import * as S from 'styles/home'
 
 type HomeProps = {
-  posts: PostData[]
+  latestPost: PostData[]
+  allPosts: PostData[]
 }
 
-export default function Home({ posts }: HomeProps) {
+export default function Home({ allPosts, latestPost }: HomeProps) {
   return (
     <>
       <Head>
@@ -21,8 +24,22 @@ export default function Home({ posts }: HomeProps) {
       <Header title="Blog" />
 
       <S.Container>
+        <Heading color="black">Post mais recente</Heading>
+
+        <S.LatestPost>
+          {latestPost.map(post => (
+            <PostCard
+              key={post.slug}
+              url={`/post/${post.id}`}
+              cover={post.cover.url}
+              title={post.title}
+            />
+          ))}
+        </S.LatestPost>
+
+        <Heading color="black">Todos os posts</Heading>
         <S.Grid>
-          {posts.map(post => {
+          {allPosts.map(post => {
             return (
               <PostCard
                 key={post.slug}
@@ -34,6 +51,8 @@ export default function Home({ posts }: HomeProps) {
           })}
         </S.Grid>
       </S.Container>
+
+      <Footer />
     </>
   )
 }
@@ -57,9 +76,13 @@ export const getStaticProps: GetStaticProps = async () => {
     }
   })
 
+  const latestPost = posts.slice(0, 1)
+  const allPosts = posts.slice(1, posts.length)
+
   return {
     props: {
-      posts
+      latestPost,
+      allPosts
     },
     revalidate: 60 * 60 * 24
   }
