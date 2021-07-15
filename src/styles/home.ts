@@ -14,7 +14,8 @@ export const Container = styled.main`
     text-align: center;
 
     ${media.lessThan('medium')`
-      width: 100%;
+      padding: 0 ${theme.spacings.small};
+      margin: 2rem auto;
     `}
   `}
 `
