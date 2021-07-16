@@ -7,7 +7,7 @@ import { Heading } from 'components/Heading'
 import { PostCard } from 'components/PostCard'
 
 import type { PostData } from 'domain/posts'
-import * as S from 'styles/home'
+import * as S from 'styles/pages/home'
 
 type HomeProps = {
   latestPost: PostData[]
@@ -21,7 +21,7 @@ export default function Home({ allPosts, latestPost }: HomeProps) {
         <title>Home page</title>
       </Head>
 
-      <Header title="Blog" />
+      <Header />
 
       <S.Container>
         <Heading color="black">Post mais recente</Heading>
