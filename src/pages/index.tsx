@@ -10,8 +10,8 @@ import type { PostData } from 'domain/posts'
 import * as S from 'styles/pages/home'
 
 type HomeProps = {
-  latestPost: PostData[]
   allPosts: PostData[]
+  latestPost: PostData[]
 }
 
 export default function Home({ allPosts, latestPost }: HomeProps) {
@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { data } = await api.get('/posts', {
     params: {
       _limit: 10,
-      _sort: 'created_at'
+      _sort: 'id:desc'
     }
   })
 

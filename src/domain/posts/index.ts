@@ -39,7 +39,7 @@ type PostCoverFormat = {
   }
 }
 
-export type PostCover = PostCoverFormat & {
+type PostCover = PostCoverFormat & {
   id: number
   alternativeText: string
   caption: string
