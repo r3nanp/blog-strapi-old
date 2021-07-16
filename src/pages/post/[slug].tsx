@@ -3,9 +3,13 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { api } from 'services/api'
 import { Header } from 'components/Header'
+import { Footer } from 'components/Footer'
 
 import { formatDate } from 'utils/format-date'
 import type { PostData } from 'domain/posts'
+
+import { FaArrowLeft } from 'react-icons/fa'
+import * as S from 'styles/pages/post'
 
 type PostProps = {
   post: PostData
@@ -20,15 +24,19 @@ export default function Post({ post }: PostProps) {
         <title>{title}</title>
       </Head>
 
-      <Header title="Blog" />
+      <Header icon={<FaArrowLeft />} />
 
-      <main>
-        <Image src={cover.url} alt={title} width={400} height={400} />
+      <S.Container>
+        <S.ImageWrapper>
+          <Image src={cover.url} alt={title} width={400} height={400} />
+        </S.ImageWrapper>
 
         <div dangerouslySetInnerHTML={{ __html: content }} />
 
         <p>Post criado em: {createdAt}</p>
-      </main>
+      </S.Container>
+
+      <Footer />
     </>
   )
 }
@@ -68,6 +76,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     props: {
       post
     },
-    revalidate: 60 * 60 * 24
+    revalidate: 60 * 60 * 24 * 3
   }
 }
