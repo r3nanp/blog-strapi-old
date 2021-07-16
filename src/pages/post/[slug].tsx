@@ -6,6 +6,7 @@ import { Header } from 'components/Header'
 import { Footer } from 'components/Footer'
 
 import { formatDate } from 'utils/format-date'
+import { markdownToHtml } from 'utils/markdown-to-html'
 import type { PostData } from 'domain/posts'
 
 import { FaArrowLeft } from 'react-icons/fa'
@@ -31,7 +32,7 @@ export default function Post({ post }: PostProps) {
           <Image src={cover.url} alt={title} width={400} height={400} />
         </S.ImageWrapper>
 
-        <div dangerouslySetInnerHTML={{ __html: content }} />
+        <div dangerouslySetInnerHTML={{ __html: markdownToHtml(content) }} />
 
         <p>Post criado em: {createdAt}</p>
       </S.Container>
