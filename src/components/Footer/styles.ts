@@ -10,9 +10,6 @@ export const Container = styled.footer`
     font-size: ${theme.font.sizes.xsmall};
 
     background: ${theme.colors.gray.dark};
-
-    a {
-      color: ${theme.colors.white};
-    }
+    color: ${theme.colors.white};
   `}
 `
