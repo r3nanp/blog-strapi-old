@@ -21,6 +21,11 @@ export const Container = styled.header`
   `}
 `
 
+export const LeftContent = styled.div`
+  display: flex;
+  justify-content: start;
+`
+
 export const Title = styled.h1`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
@@ -29,8 +34,11 @@ export const Title = styled.h1`
   `}
 `
 
-export const LeftContent = styled.nav`
+export const RightContent = styled.nav`
   ${({ theme }) => css`
+    display: flex;
+    justify-content: end;
+
     font-size: ${theme.font.sizes.xsmall};
     font-weight: ${theme.font.light};
 
@@ -55,4 +63,21 @@ export const LeftContent = styled.nav`
   `}
 `
 
-export const Icon = styled.div``
+export const Icon = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    color: ${theme.colors.gray.dark};
+    order: 1;
+    cursor: pointer;
+
+    & > svg {
+      width: 2.2rem;
+      height: 100%;
+      transition: opacity ${theme.transition.default};
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  `}
+`
