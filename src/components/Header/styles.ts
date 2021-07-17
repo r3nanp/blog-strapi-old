@@ -16,7 +16,8 @@ export const Container = styled.header`
     border-bottom: 2px solid ${theme.colors.gray.dark};
 
     ${media.lessThan('small')`
-        height: 2rem;
+        height: 3rem;
+        padding: 1.2rem;
       `}
   `}
 `
